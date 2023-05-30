@@ -18,8 +18,11 @@ public class Capitulo_2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Digite um inteiro menor que 2^32-1 ;)");
-        int valor = (sc.nextInt() - 1) * 2;
-        System.out.printf("%d é um excelente número. \n", valor);
+        int valorInteiro = (sc.nextInt() - 1) * 2;
+        System.out.printf("%d é um excelente número. \n", valorInteiro);
+        System.out.println("Digite um valor, agora com virgula :D");
+        float valorRacional = (sc.nextFloat()  * 2.444f);
+        System.out.printf("%f é valor quebradissimoooo\n", valorRacional);
         
     }
     
