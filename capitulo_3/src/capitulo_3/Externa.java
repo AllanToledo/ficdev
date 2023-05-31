@@ -9,7 +9,7 @@ package capitulo_3;
  * @author ficdev
  */
 public class Externa {
-    private class Interna {
+    final private class Interna {
         public void imprimirUmaFraseAi(){
             System.out.println("Me llamo Interna");
         }
