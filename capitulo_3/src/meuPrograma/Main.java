@@ -14,6 +14,7 @@ public class Main {
 
     public static void main(String[] args) {
         Retangulo ret = new Retangulo(20, 3);
+
         System.out.printf("Base: %.2f\n", ret.getBase());
         System.out.printf("Altura: %.2f\n", ret.getAltura());
         System.out.printf("Area: %.2f\n", ret.calcularArea());
