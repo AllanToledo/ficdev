@@ -21,8 +21,7 @@ public class AlunosENotas {
         @Override
         public String toString() {
             return "(" + nome + " " + idade + " anos nota: " + nota + ")";
-        }
-        
+        }  
         
     }
     
@@ -33,12 +32,18 @@ public class AlunosENotas {
             int opcao = JOptionPane.showConfirmDialog(null, "Deseja cadastrar mais um aluno? (s|n)");
             if(opcao != JOptionPane.YES_OPTION) break;
             String[] entrada = JOptionPane
-                    .showInputDialog("Digite o nome, idade e nota, separadas por um espaço.").split(" ");
+                    .showInputDialog("Digite o nome, idade e nota, separadas por virgula.").split(",");
             
             alunos.add(new Aluno(entrada[0], 
-                    Integer.parseInt(entrada[1]), 
-                    Float.parseFloat(entrada[2])));
+                    Integer.parseInt(entrada[1].strip()), 
+                    Float.parseFloat(entrada[2].strip()))
+            );
         }
+        
+        float media = 0;
+        for(Aluno aluno: alunos) media += aluno.nota / alunos.size();
+        
+        JOptionPane.showMessageDialog(null, String.format("Média das notas: %.2f", media));
         
         JOptionPane.showMessageDialog(null, alunos);
         
