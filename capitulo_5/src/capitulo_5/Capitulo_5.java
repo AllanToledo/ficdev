@@ -47,10 +47,12 @@ public class Capitulo_5 {
         
     public static void main(String[] args) {
         Motor motor = new Motor();
-        while(true){
+        int rc;
+        do {
+            
             String[] buttons = { "Ligar", "Desligar", "Acelerar", "Desacelerar" };
 
-            int rc = JOptionPane.showOptionDialog(null,
+            rc = JOptionPane.showOptionDialog(null,
                 String.format("Estado: %s\nRPM: %d\n", 
                                 motor.getLigado()? "Ligado": "Desligado", 
                                 motor.getRotacao()),
@@ -61,14 +63,14 @@ public class Capitulo_5 {
                 buttons,
                        buttons[2]);
 
-            if(rc == -1) break;
             switch(rc){
                 case 0 -> motor.ligar();
                 case 1 -> motor.desligar();
                 case 2 -> motor.acelerar();
                 case 3 -> motor.desacelerar();
             }
-        }
+            
+        } while(rc != -1);
     }
     
 }
