@@ -2,7 +2,6 @@ package desafio.transporte.automovel;
 
 //@author Allan Toledo
 
-import desafio.transporte.Automovel;
 
 public class Caminhao extends Automovel {
 
