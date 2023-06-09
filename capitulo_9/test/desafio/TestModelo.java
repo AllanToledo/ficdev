@@ -2,8 +2,6 @@ package desafio;
 
 //@author Allan Toledo
 
-import static org.junit.Assert.assertEquals;
-import desafio.Modelo;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 import junit.framework.Test;
