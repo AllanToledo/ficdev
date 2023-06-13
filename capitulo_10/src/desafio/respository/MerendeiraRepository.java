@@ -3,7 +3,11 @@ package desafio.respository;
 //@author Allan Toledo
 
 import desafio.model.Merendeira;
+import java.util.ArrayList;
 import java.util.List;
+import java.sql.Connection;
+import java.sql.Statement;
+import java.sql.ResultSet;
 
 public class MerendeiraRepository implements Repository<Merendeira> {
 
@@ -28,7 +32,21 @@ public class MerendeiraRepository implements Repository<Merendeira> {
 
     @Override
     public List<Merendeira> getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        List<Merendeira> merendeiras = new ArrayList<>();
+        try {
+            Connection conn = DefaultConnection.getConnection();
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM merendeira LEFT JOIN escola on =;");
+            while(rs.next()){
+                int id = rs.getInt("id");
+                String nome = rs.getString("nome");
+                
+            }
+        } catch() {
+            
+        }
+        return merendeiras;
+    
     }
 
 }
