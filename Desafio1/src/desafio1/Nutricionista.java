@@ -12,10 +12,11 @@ import javax.persistence.Table;
 public class Nutricionista {
     
     @Id
+    @Column(columnDefinition = "TEXT")
     private String nome;
-    @Column(nullable=false, unique=true)
+    @Column(nullable=false, unique=true, columnDefinition = "TEXT")
     private String crn;
-    @Column(nullable=false, unique=false)
+    @Column(nullable=false, unique=false, columnDefinition = "TEXT")
     private String uf;
 
     public Nutricionista() {
