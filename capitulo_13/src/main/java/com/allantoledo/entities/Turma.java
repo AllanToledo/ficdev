@@ -1,5 +1,6 @@
 package com.allantoledo.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -25,6 +26,7 @@ public class Turma {
     private String diaHorario;
     
     @OneToMany(mappedBy="turma", cascade=CascadeType.ALL)
+    @JsonIgnore
     private List<Notas> notas;
     
 }

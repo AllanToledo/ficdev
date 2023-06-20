@@ -2,6 +2,7 @@ package com.allantoledo.entities;
 
 //@author Allan Toledo
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -30,6 +31,11 @@ public class Aluno {
 
     public Aluno(String nome) {
         this.nome = nome;
+    }
+    
+    @Override
+    public String toString(){
+        return "Nome: " + nome + ", Matricula: " + matricula;
     }
     
 }

@@ -2,6 +2,8 @@ package com.allantoledo.entities;
 
 //@author Allan Toledo
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -32,6 +34,7 @@ public class Notas {
     @JoinColumn(name="matricula_aluno", nullable=true)
     @Getter
     @Setter
+    @JsonIgnore
     private Aluno aluno;
     @ManyToOne
     @JoinColumn(name="codigo_turma", nullable=true)
