@@ -2,6 +2,7 @@ package com.allantoledo.entities;
 
 //@author Allan Toledo
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,13 +13,14 @@ import jakarta.persistence.ManyToOne;
 @Entity
 public class Compra {
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long id;
     @ManyToOne
-    @JoinColumn(name="produto_id")
+    @JoinColumn(name = "produto_id")
     Produto produto;
     @ManyToOne
-    @JoinColumn(name="cliente_id")
+    @JoinColumn(name = "cliente_id")
+    @JsonIgnore
     Cliente cliente;
 
     public Produto getProduto() {
@@ -36,7 +38,7 @@ public class Compra {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
-    
-    
+
+
 }
 

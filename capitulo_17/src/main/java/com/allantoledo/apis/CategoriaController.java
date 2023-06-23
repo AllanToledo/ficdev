@@ -3,7 +3,9 @@ package com.allantoledo.apis;
 import com.allantoledo.entities.Categoria;
 import com.allantoledo.repositories.CategoriaRepository;
 import jakarta.transaction.Transactional;
+
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -52,9 +54,9 @@ public class CategoriaController {
 
     @PutMapping("/{id}")
     @Transactional
-    public ResponseEntity< Categoria> alterarCategoria(@PathVariable Long id, 
-            @RequestBody Categoria novaCategoria) {
-        
+    public ResponseEntity<Categoria> alterarCategoria(@PathVariable Long id,
+                                                      @RequestBody Categoria novaCategoria) {
+
         Categoria categoria = categoriaRepository.findById(id).orElse(null);
         if (categoria != null) {
             categoria.setNome(novaCategoria.getNome());
@@ -64,22 +66,22 @@ public class CategoriaController {
         } else {
             return ResponseEntity.notFound().build();
         }
-        
+
     }
 
     @DeleteMapping("/{id}")
     @Transactional
-    public ResponseEntity< Void> deletarProduto(
+    public ResponseEntity<Void> deletarProduto(
             @PathVariable Long id) {
-        
+
         Categoria categoria = categoriaRepository.findById(id).orElse(null);
-        
+
         if (categoria != null) {
             categoriaRepository.delete(categoria);
             return ResponseEntity.noContent().build();
         } else {
             return ResponseEntity.notFound().build();
         }
-        
+
     }
 }
