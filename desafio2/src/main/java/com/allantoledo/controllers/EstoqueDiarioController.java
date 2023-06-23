@@ -29,6 +29,11 @@ public class EstoqueDiarioController {
         return estoqueDiarioRepository.findAll();
     }
     
+    @GetMapping("/entregador/{id}")
+    public List<EstoqueDiario> listarEstoquesDiariosPorEntregador(@PathVariable int id){
+        return estoqueDiarioRepository.getEstoqueDiarioByEntregador(id);
+    }
+    
     @PostMapping
     public ResponseEntity<EstoqueDiario> cadastrarEstoqueDiario(@RequestBody EstoqueDiario estoqueDiario){
         EstoqueDiario salvo = estoqueDiarioRepository.save(estoqueDiario);

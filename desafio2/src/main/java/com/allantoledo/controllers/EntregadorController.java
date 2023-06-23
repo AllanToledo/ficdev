@@ -29,6 +29,13 @@ public class EntregadorController {
         return entregadorRepository.findAll();
     }
     
+    @GetMapping("/{cnh}")
+    public ResponseEntity<Entregador> pegarEntregadorPorCnh(@PathVariable String cnh){
+        Entregador entregador = entregadorRepository.getEntregadorByCnh(cnh).orElse(null);
+        if(entregador == null) return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(entregador);
+    }
+    
     @PostMapping
     public ResponseEntity<Entregador> cadastrarEntregador(@RequestBody Entregador entregador){
         Entregador salvo = entregadorRepository.save(entregador);
@@ -43,7 +50,6 @@ public class EntregadorController {
         atualizar.setData(entregador.getData());
         atualizar.setHora(entregador.getHora());
         atualizar.setNome(entregador.getNome());
-        atualizar.setUuid(entregador.getUuid());
         
         entregadorRepository.save(atualizar);
         return ResponseEntity.ok(atualizar);

@@ -16,7 +16,6 @@ public class Entregador {
     private String data;
     private String hora;
     private String nome;
-    private int uuid;
 
     public String getCnh() {
         return cnh;
@@ -48,14 +47,6 @@ public class Entregador {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public int getUuid() {
-        return uuid;
-    }
-
-    public void setUuid(int uuid) {
-        this.uuid = uuid;
     }
 
     

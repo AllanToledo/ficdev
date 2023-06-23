@@ -1,5 +1,8 @@
 package com.allantoledo.main;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0ed9086e74b321bc6337c79d6bdd3f4610cff152
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

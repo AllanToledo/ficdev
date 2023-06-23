@@ -41,7 +41,7 @@ public class UserController {
         if(atualizar == null) return ResponseEntity.notFound().build();
         atualizar.setName(user.getName());
         atualizar.setPassword(user.getPassword());
-        atualizar.setUuid(user.getUuid());
+        
         userRepository.save(atualizar);
         return ResponseEntity.ok(atualizar);
     }

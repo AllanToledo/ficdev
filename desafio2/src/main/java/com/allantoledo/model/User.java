@@ -7,15 +7,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity//@author Allan Toledo
-@Table(name="usuario")
+@Table(name="usuario") //NÃO É PERMITIDO CRIAR TABELA "USER"
 public class User {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     public int id;
-    private String name;
+    private String name; //CONVENHAMOS, SERIA MELHOR PADRONIZAR TUDO EM INGLÊS OU PORTUGUÊS
     private String password;
-    private int uuid;
-
+    //UUID NÃO IMPLEMENTADO POR CONTA DO COMENTARIO DA PROVA
     public String getName() {
         return name;
     }
@@ -31,14 +30,5 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    public int getUuid() {
-        return uuid;
-    }
-
-    public void setUuid(int uuid) {
-        this.uuid = uuid;
-    }
-    
     
 }
